@@ -1,5 +1,4 @@
-﻿using BestBuyDemo.Data.Interfaces;
-using Dapper;
+﻿using Dapper;
 
 namespace BestBuyDemo.Data.DapperWrapper
 {
@@ -12,31 +11,31 @@ namespace BestBuyDemo.Data.DapperWrapper
             _dbConnectionFactory = dbConnectionFactory;
         }
 
-        Task<int> IDapperWrapper.ExecuteAsync(IDapperRequest request)
+        async Task<int> IDapperWrapper.ExecuteAsync(IDapperRequest request)
         {
             using var connection = _dbConnectionFactory.NewConnection();
 
             connection.Open();
 
-            return connection.ExecuteAsync(request.GenerateSql(), request.GenerateParameters());
+            return await connection.ExecuteAsync(request.GenerateSql(), request.GenerateParameters());
         }
 
-        Task<TOutput> IDapperWrapper.FetchAsync<TOutput>(IDapperRequest request)
+        async Task<TOutput> IDapperWrapper.FetchAsync<TOutput>(IDapperRequest request)
         {
             using var connection = _dbConnectionFactory.NewConnection();
 
             connection.Open();
 
-            return connection.QueryFirstOrDefaultAsync<TOutput>(request.GenerateSql(), request.GenerateParameters());
+            return await connection.QueryFirstOrDefaultAsync<TOutput>(request.GenerateSql(), request.GenerateParameters());
         }
 
-        Task<IEnumerable<TOutput>> IDapperWrapper.FetchListAsync<TOutput>(IDapperRequest request)
+        async Task<IEnumerable<TOutput>> IDapperWrapper.FetchListAsync<TOutput>(IDapperRequest request)
         {
             using var connection = _dbConnectionFactory.NewConnection();
 
             connection.Open();
 
-            return connection.QueryAsync<TOutput>(request.GenerateSql(), request.GenerateParameters());
+            return await connection.QueryAsync<TOutput>(request.GenerateSql(), request.GenerateParameters());
         }
     }
 }

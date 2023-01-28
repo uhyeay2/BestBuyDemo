@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Product>
+
+<!-- Create a table to display products-->
+<h2>Products</h2>
+
+<!-- Link to go to InsertProduct views page-->
+<div style="display:block">
+    <a href="/Product/InsertProductForm/">Create a New Product</a>
+</div>
+
+
+<table class="table">
+    <!-- Create a row in the table to display the name of columns. -->
+    <tr>
+        <th> </th>
+        <th>Name</th>
+        <th>Category</th>
+    </tr>
+
+    <!-- foreach product in the Model we will create a row with data relevant to the product.-->
+    @foreach (var product in Model)
+    {
+        <tr>
+            <td><a href=/Product/ViewProduct/@product.Guid>View More</a></td>
+            <td>@product.Name</td>
+            <td>@product.Category</td>
+        </tr>
+    }
+
+</table>

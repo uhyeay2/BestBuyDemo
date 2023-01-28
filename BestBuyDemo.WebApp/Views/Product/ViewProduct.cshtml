@@ -1,0 +1,35 @@
+﻿@model Product
+
+<h3>@Model.Name Information</h3>
+
+<table class="table">
+    <!-- Create a row to represent the headers of the table-->
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>On Sale</th>
+        <th>Stock Level</th>
+    </tr>
+    <!-- Create a row displaying the information necessary for the Product we are viewing. -->
+    <tr>
+        <th>@Model.Name</th>
+        <th>@Model.Price</th>
+        <th>@Model.Category</th>
+        <th>@Model.OnSale</th>
+        <th>@Model.StockLevel</th>
+    </tr>
+</table>
+<!-- Link to UpdateProduct Views page that will allow the user to update the selected Product.-->
+<div style="display:block">
+    <a href="/Product/UpdateProductForm/@Model.Guid">Update This Product</a>
+</div>
+<!-- Link that allows the current Product to be deleted. -->
+<div style="display:block">
+    @using (Html.BeginForm("DeleteProduct", "Product", "Post"))
+    {
+        <input type="hidden" asp-for="Guid" , value="@Model.Guid" />
+        <!-- On Click will create an alert that ask the user if they are sure they wish the delete the product. -->
+        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this product" />
+    }
+</div>

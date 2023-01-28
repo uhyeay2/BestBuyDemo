@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "xejOUluvx/R3YyJZFGuv9cX2zpCFxKGt195uqEn2Cam3H0J5lCwIwtwo+Thsl9A0w9shSFOHSUvpGTg9YTLFXw==",
+  "dgSpecHash": "Qvv8P6c7UaXwtnxeHesnVJRQqvnJzCZ13mIuclBJAticvPmyXAK04aY70XF36bJ1ocVfBZn54CiBLi9q34uAQg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Omen\\source\\repos\\BestBuyDemo\\BestBuyDemo.Data\\BestBuyDemo.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Omen\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
+    "C:\\Users\\Omen\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\Omen\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Omen\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Omen\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",

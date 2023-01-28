@@ -8,14 +8,8 @@ namespace BestBuyDemo.Data.DapperWrapper
     {
         private readonly IConfig _config;
 
-        public DbConnectionFactory(IConfig config)
-        {
-            _config = config;
-        }
+        public DbConnectionFactory(IConfig config) => _config = config;
 
-        SqlConnection IDbConnectionFactory.NewConnection()
-        {
-            return new SqlConnection(_config.GetConnectionString());
-        }
+        public SqlConnection NewConnection() => new (_config.GetConfig());
     }
 }
